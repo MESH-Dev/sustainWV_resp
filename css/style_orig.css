@@ -1,0 +1,49 @@
+/*
+Theme Name: Sustainability Institute
+Theme URI: http://meshfresh.org
+Description: Theme for Sustainability Institute. Made, with love, by MESH.
+Author: MESH Design + Development
+Author URI: http://meshfresh.com
+Version: 0.1
+*/
+
+@import url(css/reset.css);
+@import url(http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded|Oswald:400,300,700|Raleway:400,500,700);
+@import url(css/sustainabilityInstitute.css);
+
+/* Add to sustainabilityInstitute.css later */
+#contentPrimary ul{list-style-type:disc;padding:10px 15px;}
+  #contentPrimary ul li{margin:5px 0;line-height:18px;display:list-item;float:none;}
+
+#contentSecondary .panel ul{list-style-type:disc;padding:10px 15px;}
+  #contentSecondary .panel ul li{margin:5px 0;line-height:18px;display:list-item;float:none;}
+
+.sidebar form#searchform input[type="submit"]{border-left:2px solid #000;}
+
+.with_frm_style label.frm_primary_label, .with_frm_style.frm_login_form label{font-family:'Oswald',sans-serif !important;}
+
+ul.topNav li a{margin:0 19px 0 0;}
+
+#intro p{font-size:16px;}
+
+ul.topNav li .menuCaret{height:16px;background:url(images/menuAngle.png) bottom left no-repeat;}
+
+body,html{min-width:1200px;}
+
+
+input, footer #col4 input[type="submit"]{-webkit-appearance: none;border-radius:0px;}
+
+#headerSearch input[type="text"], #footerSearch input[type="text"]{border-left:4px solid #000 !important;border-top:4px solid #000 !important;border-bottom:4px solid #000 !important;width: 739px !important;border-right: 2px solid #000 !important;height:42px !important;}
+#headerSearch input[type="submit"], #footerSearch input[type="submit"]{border-left:2px solid #000 !important;border-right:4px solid #000 !important;border-top:4px solid #000 !important;border-bottom:4px solid #000 !important;float:left !important;}
+
+ul.topNav li ul{margin-top: 4px;}
+
+.frm_description{font-family:"Raleway",sans-serif !important;}
+
+strong{ font-weight:700;}
+
+.nobold{font-weight:normal !important;}
+
+.panel.blogpost{margin:5px 0 15px;}
+.featimg{width:100%;margin:23px 0 -1px;}
+	.featimg > img{width:100%;height:auto;}

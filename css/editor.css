@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded|Oswald:400,300,700|Raleway:400,500);
+
+html{background:url(../images/bgTexture.png) top center #cecece repeat-y;}
+body{font-family:'Raleway',sans-serif;font-size:13px;padding:35px;background:#fff;}
+img{max-width: 100%;height:auto;}
+#tinymce{width:518px;margin:0 auto;}
+
+h2{font-family:'Oswald',Arial,sans-serif;font-size:24px;color:#000;text-transform:uppercase;font-weight:bold;letter-spacing:0.05em;padding:15px 0 15px 4px;border-bottom:4px solid #000;margin:0 0 15px 4px;display:block;width:58%;}
+
+h3{font-family: 'Oswald',Arial,sans-serif;font-size:16px;color:#000;text-transform: uppercase;font-weight:bold;}
+
+h4{color:#F3524E;font-weight:bold;font-size:13px;display:block;font-family:'Oswald',sans-serif;letter-spacing: 0.025em;text-transform:uppercase;margin:0 0 20px;}
+
+h3,h4,h5{margin:0 0 1em 0;}
+
+p{line-height:1.4em;margin:0 0 1.5em 0;}
+
+a{text-decoration:none;color:#F3524E;}
+a:hover{color:#000;}
+
+ul{list-style: disc;display:block;float:left;margin:10px 20px;}
+	ul li{display:list-item;}
+ol{list-style: decimal;display: block;float:left;margin:10px 20px;}
+	ol li{width:100%;float:left;}
+
+blockquote{color: #F3524E;font-size: 14px;font-style: italic;padding: 10px 20px;}
+strong,b{font-weight:bold;}
+em,i{font-style:italic;}

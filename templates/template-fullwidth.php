@@ -2,7 +2,7 @@
 
 <?php get_header(); ?>
 
-<section id="content" class="interior">
+<section id="content" class="interior nine columns">
 			<div class="gutter clearfix">
 				<nav>
 					<?php

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" class="interior">
+<section id="content" class="interior nine columns">
 			<div class="gutter clearfix">
 				<nav>
 					<?php
@@ -25,7 +25,7 @@
 					);	wp_nav_menu( $defaults ); } ?>
 					<div class="crossbar"></div>
 				</nav>
-				<div id="contentPrimary">
+				<div id="contentPrimary" class="eight columns">
 					<div class="gutter">
 						<?php
 							if ( have_posts() ) {
@@ -50,7 +50,7 @@
 
 					</div>
 				</div>
-				<div id="contentSecondary">
+				<div id="contentSecondary" class="four columns">
 					<div class="gutter">
 						<?php dynamic_sidebar('blog-sidebar'); ?>
 					</div>

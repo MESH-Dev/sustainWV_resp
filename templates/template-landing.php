@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<section id="content" class="interior landing">
+<section id="content" class="interior landing nine columns">
 			<div class="gutter clearfix">
 				<nav>
 					<?php

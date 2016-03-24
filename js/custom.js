@@ -1,5 +1,9 @@
+var $  = jQuery;
+
 $(document).ready(function(){
-	$domain = 'http://sustainwv.org';
+
+	//$domain = 'http://sustainwv.org';
+	$domain = 'http://localhost:8888/sustainWV_resp';
 	queryURL = $domain+'/wp-content/themes/SustainabilityInstitute/templates/resourcesFilter.php';
 	queryURL_I = $domain+'/wp-content/themes/SustainabilityInstitute/templates/impactFilter.php';
 	queryURL_O = $domain+'/wp-content/themes/SustainabilityInstitute/templates/networkFilter.php';
@@ -15,10 +19,147 @@ $(document).ready(function(){
 	// 	$('.hex:eq(3)').next('.hex').andSelf().wrapAll('<div class="lasttwo"></div>');
 	// });
 
-	var $set = $('.hex-rowodd:eq(1)').children();
-	var $len = $set.length();
-	console.log($len);
-	colsole.log($set);
+	// var _set = $('.hex-rowodd:eq(1) .hex');
+	// var _setCount = (_set.length)/2;
+	// var $len = _set.size();
+	// var _setLen = _set.length;
+	// console.log($len);
+	// console.log(_setLen);
+
+	// for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// }
+
+	// $('.hex_content .hex-rowodd').each(function(){
+	// 	var _set = $(this).find('.hex');
+	// 	var _setCount = (_set.length)/2;
+
+	// 	//console.log("Number in set is " +_set);
+	// 	//console.log("Number in set/4 is " +_setCount);
+
+	// 	for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// }
+	// });
+
+
+	// $('.hex_content .hex-roweven').each(function(){
+	// 	var _set = $(this).find('.hex');
+	// 	var _setCount = (_set.length)/2;
+
+	// 	//console.log("Number in set is " +_set);
+	// 	//console.log("Number in set/4 is " +_setCount);
+
+	// 	for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// 	}
+
+	// });
+
+
+	// $('#hexWrap .hex-rowodd').each(function(){
+	// 	var _set = $(this).find('.hex');
+	// 	var _setCount = (_set.length)/2;
+
+	// 	//console.log("Number in set is " +_set);
+	// 	//console.log("Number in set/4 is " +_setCount);
+
+	// 	for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// }
+	// });
+
+	// $('#hexWrap .hex-roweven').each(function(){
+	// 	var _set = $(this).find('.hex');
+	// 	var _setCount = (_set.length)/2;
+
+	// 	//console.log("Number in set is " +_set);
+	// 	//console.log("Number in set/4 is " +_setCount);
+
+	// 	for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// }
+	// });
+
+	
+
+	// $('#hexWrap-secondary .hex-roweven').each(function(){
+	// 	var _set = $(this).find('.hex');
+	// 	var _setCount = (_set.length)/2;
+
+	// 	//console.log("Number in set is " +_set);
+	// 	//console.log("Number in set/4 is " +_setCount);
+
+	// 	for(var i=2; i < _set.length; i+=_setCount){
+	// 	_set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+	// }
+	// });
+
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $(container).each(function() {
+
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+$(window).load(function() {
+  equalheight('.col');
+});
+
+
+$(window).resize(function(){
+  equalheight('.col');
+});
+
+var windowW = $(window).width();
+
+if (windowW <= 1030){
+	$(window).load(function() {
+  equalheight('[class^="header-"]');
+});
+
+
+$(window).resize(function(){
+  equalheight('[class^="header-"]');
+});
+}
+	
+  $('.sidr-trigger').sidr({
+  		renaming:false,
+      source: '.top-nav, nav',
+      displace:false
+    });
+
+  $('.close').click(
+    function(){
+      $.sidr('close', 'sidr');
+       console.log("Sidr should be closed");
+    });
+	
 
 	//Menu caret
 	$('section#content .topNav ul.sub-menu').each(function(){
@@ -94,6 +235,17 @@ $(document).ready(function(){
 	    $.each( ids, function( i, l ){
 	        $cont.append(l);
 	    });
+
+	 //    var _set = $(this).find('.hex');
+		// var _setCount = (_set.length)/2;
+
+		// //console.log("Number in set is " +_set);
+		// //console.log("Number in set/4 is " +_setCount);
+
+		// for(var i=2; i < _set.length; i+=_setCount){
+		// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+		// }
+
 	});
 	$('.home .hex-roweven:not(.last)').each(function(i){
 	    $cont = $(this);
@@ -112,6 +264,16 @@ $(document).ready(function(){
 	    $.each( ids, function( i, l ){
 	        $cont.append(l);
 	    });
+
+	 //    var _set = $(this).find('.hex');
+		// var _setCount = (_set.length)/2;
+
+		// //console.log("Number in set is " +_set);
+		// //console.log("Number in set/4 is " +_setCount);
+
+		// for(var i=2; i < _set.length; i+=_setCount){
+		// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+		// }
 	});
 	$('.home .hex-roweven.last').each(function(i){
 	    $cont = $(this);
@@ -132,6 +294,16 @@ $(document).ready(function(){
 	    $.each( ids, function( i, l ){
 	        $cont.append(l);
 	    });
+
+	 //    var _set = $(this).find('.hex');
+		// var _setCount = (_set.length)/2;
+
+		// //console.log("Number in set is " +_set);
+		// //console.log("Number in set/4 is " +_setCount);
+
+		// for(var i=2; i < _set.length; i+=_setCount){
+		// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+		// }
 	});
 
 	//Home Hover
@@ -176,6 +348,7 @@ $(document).ready(function(){
 			var dataFilter = $(this).attr('data-filter');
 			var topicFilter = $('#topicsList #topics').val();
 			var cptFilter = $('#filters').attr('data-cpt');
+
 			$('#hexWrap').fadeOut( 200, function() {
 				request(queryURL,dataFilter, topicFilter, cptFilter, '#hexWrap');
 			});
@@ -189,6 +362,7 @@ $(document).ready(function(){
 		var cptFilter = $('#filters').attr('data-cpt');
 		$('#hexWrap').fadeOut( 200, function() {
 			request(queryURL_I,dataFilter, topicFilter, cptFilter, '#hexWrap');
+
 		});
 	});
 
@@ -198,11 +372,15 @@ $(document).ready(function(){
 			var dataFilter = $(this).attr('data-filter');
 			var topicFilter = $('#topicsList #topics').val();
 			var cptFilter = $('#filters').attr('data-cpt');
+
 			$('#hexWrap').fadeOut( 200, function() {
 				request(queryURL_I,dataFilter, topicFilter, cptFilter, '#hexWrap');
+				//success(rowOdd);
 			});
 			$('ul#filters li a').removeClass('active');
 			$(this).addClass('active');
+
+			
 		}
 	});
 	$('#topicsList select#topics.project').change(function(){
@@ -241,7 +419,45 @@ $(document).ready(function(){
 	        success: function(msg) {
 	            console.log(msg);
 			    $(targetDiv).html(msg).fadeIn(200);
-	        }
+
+			 //    $('.hex-rowodd').each(function(){
+				// var _set = $(this).find('.hex');
+				// var _setCount = (_set.length)/2;
+
+				// //console.log("Number in set is " +_set);
+				// //console.log("Number in set/4 is " +_setCount);
+
+				// for(var i=2; i < _set.length; i+=_setCount){
+				// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+				// }
+				// });
+
+				// $('.hex-roweven').each(function(){
+				// var _set = $(this).find('.hex');
+				// var _setCount = (_set.length)/2;
+
+				// //console.log("Number in set is " +_set);
+				// //console.log("Number in set/4 is " +_setCount);
+
+				// for(var i=2; i < _set.length; i+=_setCount){
+				// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+				// }
+				// });
+
+				// $('#hexWrap-secondary').each(function(){
+				// var _set = $(this).find('.hex');
+				// var _setCount = (_set.length)/2;
+
+				// //console.log("Number in set is " +_set);
+				// //console.log("Number in set/4 is " +_setCount);
+
+				// for(var i=2; i < _set.length; i+=_setCount){
+				// _set.slice(i, i+_setCount).wrapAll('<div class="lasttwo"></div>');
+				// }
+				// });
+	    
+	        } 
+
 	    });
 	}
 

@@ -49,7 +49,7 @@
 			    echo '</div><div class="hex-rowodd">';
 			    $rowswitch = true;
 		    }
-		} $count++; endwhile;
+		} $count++; endwhile; echo'</div>';
 
 
 	if($topicFilter != ''){
@@ -63,7 +63,7 @@
 		$rowswitch = true;
 		if($loop->post_count > 0){
 		$term = get_term_by('slug', $topicFilter, 'topic');
-		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3>";
+		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3><div class='row-odd'>";
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="hex">
 				<div class="gutter">

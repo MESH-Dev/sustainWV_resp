@@ -3,7 +3,7 @@
 <?php //truly the home page ?>
 <section id="content" class="nine columns">
 			<div class="gutter clearfix shaun">
-				<nav>
+				<nav id="front-page-nav">
 					<?php
 					if ( has_nav_menu( 'mainNav' ) ) {
 						$defaults = array(

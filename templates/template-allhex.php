@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<section id="content" class="interior projects nine columns">
+<section id="content" class="interior projects nine columns" >
 			<div class="gutter clearfix">
 				<nav>
 					<?php
@@ -36,14 +36,15 @@ get_header(); ?>
 						while ( have_posts() ) {
 							the_post(); ?>
 				<h2><?php the_title(); ?></h2>
-				<div id="contentSecondary" class="hex-tiles four columns">
+				<div id="contentSecondary" class="hex-tiles">
 					<div id="intro" class="panel small stint wide">
 							<div class="gutter">
 								<p><?php the_field('intro'); ?></p>
 							</div>
 						</div>
 				<?php } } ?>
-					<div class="gutter clearfix">
+					<div class="gutter clearfix container">
+						<div class="hex_content content">
 						<div class="hex-rowodd">
 							<?php
 								$count = 1;
@@ -81,7 +82,7 @@ get_header(); ?>
 									<?php $count++; ?>
 								<?php endwhile; ?>
 
-
+							</div>
 					</div>
 				</div>
 			</div>

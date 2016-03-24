@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" class="nine columns interior shaun">
+<section id="content" class="nine columns interior">
 			<div class="gutter clearfix">
 				<nav>
 					<?php

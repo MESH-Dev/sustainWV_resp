@@ -21,7 +21,7 @@
 	if($ajaxFilter == 'reset'){
 		$ajaxFilter = '';
 	}
-	echo '<div class="hex-rowodd">';
+	echo '<div class="hexWrap-primary"><div class="hex-rowodd first">';
 	$count = 1;
 	$rowswitch = true;
 	$args = array(
@@ -32,8 +32,10 @@
 	);
 	$loop = new WP_Query( $args );
 	while ( $loop->have_posts() ) : $loop->the_post();
+		//if ($count > 1){echo '<div class="rowodd">';}
 		if(get_post_type() == 'resources'){ ?>
-			<div class="hex">
+		<!-- <div class="hex-rowodd"> -->
+			<div class="hex <?php echo $count; ?>">
 				<div class="gutter">
 					<a href="http://<?php echo get_field('resource_url'); ?>" target="_blank">
 						<h4><?php the_title(); ?></h4>
@@ -43,7 +45,8 @@
 				</div>
 			</div>
 		<?php }else{ ?>
-			<div class="hex">
+		<!-- <div class="hex-rowodd"> -->
+			<div class="hex <?php echo $count; ?>">
 				<div class="gutter">
 					<a href="<?php the_permalink(); ?>">
 						<h4><?php the_title(); ?></h4>
@@ -52,8 +55,9 @@
 					</a>
 				</div>
 			</div>
+
 		<?php
-		} if ($count > 0 && $count % 4 == 0) {
+		}if ($count > 1 && $count % 4 == 0) {
 		    if($rowswitch == true){
 			    echo '</div><div class="hex-roweven">';
 			    $rowswitch = false;
@@ -61,7 +65,7 @@
 			    echo '</div><div class="hex-rowodd">';
 			    $rowswitch = true;
 		    }
-		} $count++; endwhile;
+		}$count++; endwhile; echo '</div></div>';
 
 		if($topicFilter != ''){
 		$args = array(
@@ -74,7 +78,7 @@
 		$rowswitch = true;
 		if($loop->post_count > 0){
 		$term = get_term_by('slug', $topicFilter, 'topic');
-		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3>";
+		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3><div class='hex-rowodd'>";
 		while ( $loop->have_posts() ) : $loop->the_post(); if(get_post_type() == 'resources'){ ?>
 			<div class="hex">
 				<div class="gutter">

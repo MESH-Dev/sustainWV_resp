@@ -21,7 +21,7 @@
 	if($ajaxFilter == 'reset'){
 		$ajaxFilter = '';
 	}
-	echo '<div class="hex-rowodd">';
+	echo '<div class="hexWrap-primary"><div class="hex-rowodd">';
 	$count = 1;
 	$rowswitch = true;
 	$args = array(
@@ -49,7 +49,7 @@
 			    echo '</div><div class="hex-rowodd">';
 			    $rowswitch = true;
 		    }
-		} $count++; endwhile; echo'</div>';
+		} $count++; endwhile; echo'</div></div>';
 
 
 	if($topicFilter != ''){
@@ -63,7 +63,7 @@
 		$rowswitch = true;
 		if($loop->post_count > 0){
 		$term = get_term_by('slug', $topicFilter, 'topic');
-		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3><div class='row-odd'>";
+		echo "<div id='hexWrap-secondary'><h3>Other Entries with Topic: ".$term->name."</h3><div class='hex-rowodd'>";
 		while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="hex">
 				<div class="gutter">

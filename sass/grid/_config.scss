@@ -18,7 +18,7 @@ $use-px-fallback: true !global; // allow for pixel fall back
 // $base-width: 960px !global;  // The overall width of the grid (.container)
 $is-fluid: true !global; // Change to true to enable the fluid grid
 $base-col-width: 61.666px !global; // The width of each columns
-$base-gutter-width: 20px !global; // The space between columns
+$base-gutter-width: 30px !global; // The space between columns
 $base-col-count: 12 !global; // The number of columns
 $base-width: if($is-fluid, 98%, ($base-col-width + $base-gutter-width) * $base-col-count) !global; // Calculated
 

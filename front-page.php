@@ -68,6 +68,7 @@
 					<?php } ?>
 					<div class="gutter clearfix">
 						<h2>Sustainable WV Resources</h2>
+						<div class="content">
 						<div class="hex-rowodd">
 							<?php
 								$args = array( 'post_type' => 'resources',
@@ -143,7 +144,7 @@
 
 
 
-
+					</div>
 					</div>
 				</div>
 			</div>

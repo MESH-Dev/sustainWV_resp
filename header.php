@@ -22,10 +22,11 @@
 	<div class="sidr-trigger">
 		<img src="<?php bloginfo('stylesheet_directory'); ?>/images/nav_trigger.png">
 	</div>
+	<div id="headerBar" aria-hidden="true"></div>
 	<div id="headerTrim">
 		<div class="container">
 			
-				<div class="mobile mobile-logo">
+				<div class="mobile mobile-logo"><!-- -->
 					<a class="logo" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png"></a>
 				</div>
 			
@@ -81,7 +82,7 @@
 		<header>
 			<section id="sidebar">
 				<a class="logo" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png"></a>
-				<div class="header-white">
+				<div class="<?php if(is_front_page()){echo 'home-white';} ?> hdr-eh header-white">
 					<div class="whitebefore">
 						<img src="<?php echo get_template_directory_uri('/'); ?>/images/sidebar-whiteTop.png">
 					</div>
@@ -118,7 +119,7 @@
 						<img src="<?php echo get_template_directory_uri('/'); ?>/images/sidebar-whiteBottom.png">
 					</div>
 				</div>
-				<div class="header-grey">
+				<div class="<?php if(is_front_page()){echo 'home-grey';} ?> hdr-eh header-grey">
 					<div class="greybefore">
 						<img src="<?php echo get_template_directory_uri('/'); ?>/images/sidebar-greyTop.png">
 					</div>

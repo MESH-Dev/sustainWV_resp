@@ -2,8 +2,13 @@ var $  = jQuery;
 
 $(document).ready(function(){
 
-	//$domain = 'http://sustainwv.org';
-	$domain = 'http://localhost:8888/sustainWV_resp';
+	var _domain = window.location.href;
+
+	_arr = _domain.split('/');
+	_url = _arr[0] + "//" + _arr[2];
+
+	$domain = _url;
+
 	queryURL = $domain+'/wp-content/themes/SustainabilityInstitute/templates/resourcesFilter.php';
 	queryURL_I = $domain+'/wp-content/themes/SustainabilityInstitute/templates/impactFilter.php';
 	queryURL_O = $domain+'/wp-content/themes/SustainabilityInstitute/templates/networkFilter.php';
@@ -138,16 +143,34 @@ $(window).resize(function(){
 var windowW = $(window).width();
 
 if (windowW <= 1030){
-	$(window).load(function() {
-  equalheight('[class^="header-"]');
-});
 
+	$(window).load(function() {
+ 		equalheight('.hdr-eh');
+	});
+
+
+	$(window).resize(function(){
+		equalheight('.hdr-eh');
+	});
+}
 
 $(window).resize(function(){
-  equalheight('[class^="header-"]');
-});
+
+var windowW = $(window).width();
+//console.log(winddowW);
+if (windowW <= 1030){
+
+	$(window).load(function() {
+ 		equalheight('.hdr-eh');
+	});
+
+
+	$(window).resize(function(){
+		equalheight('.hdr-eh');
+	});
 }
-	
+});
+
   $('.sidr-trigger').sidr({
   		renaming:false,
       source: '.top-nav, nav',

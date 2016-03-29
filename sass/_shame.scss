@@ -736,9 +736,23 @@ section#content nav{
 	#comments ul.children{margin:0 0 0 20px;}
 
 	#comments #respond{margin:20px 0 0 0;}
-		#comments #respond textarea{width:95%;float:left;border:2px solid #000;font-family: 'Raleway',sans-serif;font-size:12px;padding:2%;}
+		#comments #respond textarea{
+			//width:95%;
+			float:left;
+			border:2px solid #000;
+			font-family: 'Raleway',sans-serif;
+			font-size:12px;padding:2%;
+		}
 		#commentform input[type="submit"] {background: none repeat scroll 0 0 #000000;border: medium none;color: #FFFFFF;font-family: 'Oswald',sans-serif;font-size: 14px;margin: 10px 0 0;padding: 5px 15px;text-transform: uppercase;}
 		#commentform input[type="submit"]:hover{cursor:pointer;background:#d22831;}
+
+		#commentform{
+			#author,
+			#email,
+			#url{
+				background:#ededed;
+			}
+		}
 
 /* Footer */
 footer{

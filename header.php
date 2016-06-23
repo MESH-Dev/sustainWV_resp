@@ -96,11 +96,16 @@
 								<div class="scrollable" id="scrollable">
 									<div class="items">
 										<?php
+
+										$rows = get_field('taglines');
+										$rand_rows = $rows[array_rand($rows)];
+										$rand_tagline = $rand_rows['tagline'];
+
 											if(get_field('taglines'))
 											{
 												while(has_sub_field('taglines'))
 												{
-													echo '<div><span class="stint featurePhrase">' . get_sub_field('tagline') . '</span></div>';
+													echo '<div><span class="stint featurePhrase">' . $rand_tagline . '</span></div>';
 												}
 											}
 										?>

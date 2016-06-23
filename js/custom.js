@@ -3,11 +3,16 @@ var $  = jQuery;
 $(document).ready(function(){
 
 	var _domain = window.location.href;
+	//console.log(_domain);
 
 	_arr = _domain.split('/');
 	_url = _arr[0] + "//" + _arr[2];
 
-	$domain = _url;
+	//$domain = _url;
+	//console.log($domain);
+
+	$domain = 'http://localhost:8888/sustainwv_resp'
+	//$domain = 'http://sustainwv.org'; 
 
 	queryURL = $domain+'/wp-content/themes/SustainabilityInstitute/templates/resourcesFilter.php';
 	queryURL_I = $domain+'/wp-content/themes/SustainabilityInstitute/templates/impactFilter.php';
